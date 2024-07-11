@@ -63,11 +63,33 @@ section{
     padding: 1rem 3rem;
 }
 
+#menu-toogle{
+    z-index: 999;
+    position: absolute;
+    right: 7.5%;
+    bottom: 3%;
+    top: 3%;
+    width: 29px;
+    opacity: 0;
+}
+
 #menu-btn{
     font-size: 3.5rem;
     cursor: pointer;
     color: white;
     display: none;
+}
+
+#cross{
+    z-index:99;
+    position: absolute;
+    right: 8%;
+    bottom: 22%;
+    top: 37%;
+    font-size: 2rem;
+    color: black;
+    display: none;
+    
 }
 /* header start */
 .header{
@@ -88,6 +110,10 @@ section{
     font-weight: bolder;
     color: #c9d2d2;
     text-transform: capitalize;
+}
+
+.header .navbar{
+    z-index: 10;
 }
 
 .header .navbar a{
@@ -588,13 +614,30 @@ section{
     }
 
     .header .navbar{
-        position: fixed;
+        z-index: 50;
+        position: absolute;
         top: 0;
-        right: -10%;
+        right: -100%;
         width: 30rem;
-        background: white;
+        background-color:#857054;
         height: 100%;
-        display: none;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        padding-top: 30px;
+    }
+
+    .header .navbar a{
+        color:#740000;
+        font-size: 28px;
+    }
+
+    #menu-toogle:checked + .header .navbar {
+        right: -10%;
+    }
+
+    #menu-toogle:checked + .ri-close-circle-fill #cross {
+        display: block;
     }
 
     .home .content h3{
@@ -622,4 +665,25 @@ section{
         font-size: 4.3rem;
     }
 }
+
+@media (max-width:836px){
+    .about .about-container .image img{
+        width: 80vw;
+    }
+}
+
+@media (max-width:782px){
+    .about .about-container .image img{
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px){
+    .about .about-container .image img{
+        width: 70%;
+        height: auto;
+        /* display:none; */
+    }
+}
+
 /* responsive design end */
