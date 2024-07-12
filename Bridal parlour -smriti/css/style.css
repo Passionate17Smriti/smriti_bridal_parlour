@@ -66,16 +66,16 @@ section{
 #menu-toogle{
     z-index: 999;
     position: absolute;
+    cursor: pointer;
     right: 7.5%;
     bottom: 3%;
     top: 3%;
-    width: 29px;
+    width: 25px;
     opacity: 0;
 }
 
 #menu-btn{
     font-size: 3.5rem;
-    cursor: pointer;
     color: white;
     display: none;
 }
@@ -86,11 +86,11 @@ section{
     right: 8%;
     bottom: 22%;
     top: 37%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: black;
-    display: none;
-    
+    opacity: 0;
 }
+
 /* header start */
 .header{
     padding-top: 2rem;
@@ -117,7 +117,7 @@ section{
 }
 
 .header .navbar a{
-    font-size: 2.5rem;
+    font-size: 1.8vw;
     color: #e9d2d2;
     text-transform: capitalize;
     margin-left: 2rem;
@@ -613,14 +613,18 @@ section{
         display: inline-block;
     }
 
+    .header {
+        /* overflow-x: hidden; */
+    }
+
     .header .navbar{
         z-index: 50;
-        position: absolute;
+        position: fixed;
         top: 0;
-        right: -100%;
+        right: -300px;
         width: 30rem;
         background-color:#857054;
-        height: 100%;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         gap: 22px;
@@ -630,14 +634,14 @@ section{
     .header .navbar a{
         color:#740000;
         font-size: 28px;
+    } 
+
+    #menu-toogle:checked + .navbar {
+        right: 0%;
     }
 
-    #menu-toogle:checked + .header .navbar {
-        right: -10%;
-    }
-
-    #menu-toogle:checked + .ri-close-circle-fill #cross {
-        display: block;
+    #menu-toogle:checked ~ .nav-btns #cross {
+        opacity: 100%;
     }
 
     .home .content h3{
